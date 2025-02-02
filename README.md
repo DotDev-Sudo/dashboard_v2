@@ -115,7 +115,7 @@ If Docker is not installed, please follow the instructions in the **Prerequisite
     ```
     
     - Enter the following credentials to log in:
-      - **Username**: `admin`
+      - **Username**: `Admin`
       - **Password**: `password`
 
     After logging in, you will have access to the **media management dashboard**. Here, you can manage the media content, which includes adding or removing media files (MP4 videos and JPG images).
