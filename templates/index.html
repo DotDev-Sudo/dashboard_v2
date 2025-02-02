@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Dashboard</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .media-container {
+            width: 100vw;
+            height: 100vh;
+        }
+
+        video, img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: none; /* Hide all elements initially */
+        }
+
+        .active {
+            display: block; /* Show the active media item */
+        }
+    </style>
+</head>
+<body>
+    <div class="media-container" id="media-container">
+        <!-- Dynamically loaded media items -->
+        {% for image in media_files['images'] %}
+        <img src="{{ url_for('media', filename=image) }}" alt="Image" />
+        {% endfor %}
+        {% for video in media_files['videos'] %}
+        <video autoplay loop muted>
+            <source src="{{ url_for('media', filename=video) }}" type="video/mp4">
+        </video>
+        {% endfor %}
+    </div>
+
+    <script src="https://cdn.socket.io/4.5.0/socket.io.min.js"></script>
+    <script>
+        const socket = io(); // Connect to the Socket.IO server
+
+        // Function to reload the page when new media is uploaded or deleted
+        socket.on('media_uploaded', (data) => {
+            console.log(data.message);
+            location.reload(); // Reload the page to update media
+        });
+
+        socket.on('media_deleted', (data) => {
+            console.log(data.message);
+            location.reload(); // Reload the page to update media
+        });
+
+        // Media Slideshow Logic
+        const mediaItems = document.querySelectorAll('#media-container > *');
+        let currentIndex = 0;
+
+        function showNextMedia() {
+            mediaItems[currentIndex].classList.remove('active'); // Hide current media
+            currentIndex = (currentIndex + 1) % mediaItems.length; // Go to the next media
+            mediaItems[currentIndex].classList.add('active'); // Show the new media
+
+            if (mediaItems[currentIndex].tagName === 'VIDEO') {
+                const videoElement = mediaItems[currentIndex];
+                videoElement.currentTime = 0; // Reset the video
+                videoElement.play(); // Start playing the video
+            }
+        }
+
+        // Start the slideshow
+        function startSlideshow() {
+            if (mediaItems.length > 0) {
+                mediaItems[currentIndex].classList.add('active'); // Show the first item
+                setInterval(showNextMedia, 10000); // Change every 10 seconds
+            }
+        }
+
+        // Start the slideshow once the page loads
+        window.onload = startSlideshow;
+    </script>
+</body>
+</html>
