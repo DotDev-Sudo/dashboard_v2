@@ -86,7 +86,7 @@ If Docker is not installed, please follow the instructions in the **Prerequisite
 2. **Run the following Docker command** to start the container with the application:
 
     ```bash
-    docker run -d --network="bridge" -p 3000:5000 sanjaykshebbar/dashboard_v2:v1
+    docker run -d --network="bridge" -p 5000:5000 sanjaykshebbar/dashboard_v2:v1
     ```
 
     #### Explanation of the Docker command:
@@ -94,7 +94,7 @@ If Docker is not installed, please follow the instructions in the **Prerequisite
     - `docker run`: This command runs a container from a specified image.
     - `-d`: This flag runs the container in the background (detached mode).
     - `--network="bridge"`: This specifies the network mode for the container. The `bridge` network is a default network in Docker, ensuring that the container can communicate with other containers on the same network.
-    - `-p 3000:5000`: This flag maps the host machine's port 3000 to the container's port 5000, making the application accessible on port 3000 of your host machine.
+    - `-p 5000:5000`: This flag maps the host machine's port 5000 to the container's port 5000, making the application accessible on port 5000 of your host machine.
     - `sanjaykshebbar/add-board:v2`: This is the name of the Docker image being used. It's a versioned image (`v2`), and this image contains the application code.
 
 3. **Access the application**:
@@ -102,7 +102,7 @@ If Docker is not installed, please follow the instructions in the **Prerequisite
     - Open a browser and enter the following URL to access the app:
     
     ```plaintext
-    http://<IP/Hostname>:3000
+    http://<IP/Hostname>:5000
     ```
     
     This will launch the blank page of the application.
@@ -111,7 +111,7 @@ If Docker is not installed, please follow the instructions in the **Prerequisite
     - To access the media management dashboard, navigate to the login page:
     
     ```plaintext
-    http://<IP/Hostname>:3000/login
+    http://<IP/Hostname>:5000/login
     ```
     
     - Enter the following credentials to log in: (This is the defaut user, where this can be removed / Modified later.)
