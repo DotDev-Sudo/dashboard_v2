@@ -86,7 +86,7 @@ If Docker is not installed, please follow the instructions in the **Prerequisite
 2. **Run the following Docker command** to start the container with the application:
 
     ```bash
-    docker run -d --network="bridge" -p 3000:5000 sanjaykshebbar/add-board:v2
+    docker run -d --network="bridge" -p 3000:5000 sanjaykshebbar/dashboard_v2:v1
     ```
 
     #### Explanation of the Docker command:
@@ -114,9 +114,9 @@ If Docker is not installed, please follow the instructions in the **Prerequisite
     http://<IP/Hostname>:3000/login
     ```
     
-    - Enter the following credentials to log in:
+    - Enter the following credentials to log in: (This is the defaut user, where this can be removed / Modified later.)
       - **Username**: `Admin`
-      - **Password**: `password`
+      - **Password**: `password@123`
 
     After logging in, you will have access to the **media management dashboard**. Here, you can manage the media content, which includes adding or removing media files (MP4 videos and JPG images).
 
