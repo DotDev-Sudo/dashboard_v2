@@ -95,7 +95,7 @@ If Docker is not installed, please follow the instructions in the **Prerequisite
     - `-d`: This flag runs the container in the background (detached mode).
     - `--network="bridge"`: This specifies the network mode for the container. The `bridge` network is a default network in Docker, ensuring that the container can communicate with other containers on the same network.
     - `-p 5000:5000`: This flag maps the host machine's port 5000 to the container's port 5000, making the application accessible on port 5000 of your host machine.
-    - `sanjaykshebbar/add-board:v2`: This is the name of the Docker image being used. It's a versioned image (`v2`), and this image contains the application code.
+    - `sanjaykshebbar/dashboard_v2:v1`: This is the name of the Docker image being used. It's a versioned image (`v2`), and this image contains the application code.
 
 3. **Access the application**:
     - Once the container is running, you can access the application via a web browser.
@@ -116,7 +116,7 @@ If Docker is not installed, please follow the instructions in the **Prerequisite
     
     - Enter the following credentials to log in: (This is the defaut user, where this can be removed / Modified later.)
       - **Username**: `Admin`
-      - **Password**: `password@123`
+      - **Password**: `Password@123`
 
     After logging in, you will have access to the **media management dashboard**. Here, you can manage the media content, which includes adding or removing media files (MP4 videos and JPG images).
 
