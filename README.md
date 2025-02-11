@@ -12,7 +12,7 @@ A simple and modern web application built using **Flask** and **Socket.IO** to m
 - **Media Deletion**: Delete uploaded media files directly from the interface.
 - **Responsive Design**: Fully responsive layout for mobile, tablet, and desktop views.
 - **Socket.IO Integration**: Real-time updates for media upload and deletion events.
-- **Material Design**: Clean and modern user interface styled with Material Design principles.
+
 
 ---
 
@@ -26,7 +26,7 @@ Yet to Upload this
 ## Repos:
 1. Git Repo 1: https://github.com/DotDev-Sudo/dashboard_v2
 2. Git Repo 2: https://github.com/sanjaykshebbar/dashboard_v2
-3. Docker Image: [https://hub.docker.com/r/sanjaykshebbar/add-board](https://hub.docker.com/r/sanjaykshebbar/dashboard_v2)
+3. Docker Image: https://hub.docker.com/r/sanjaykshebbar/dashboard_v2
 
 ---
 ## More Information and comparison of this tool:
@@ -40,7 +40,7 @@ https://docs.google.com/document/d/1kKM8m7qLkr5Qdq7YP_EUZ8ehRRQx9t87wViwPuE8dRE/
 - **Socket.IO**: Real-time communication between the server and client for media upload and deletion events.
 - **HTML & CSS**: Frontend technologies used for creating the structure and styling the application.
 - **Material Design Lite (MDL)**: A CSS and JS library to style the app with Google's Material Design principles.
-- **SQLite (optional)**: A lightweight database for storing user data (if implemented in the future).
+- **SQLite **: A lightweight database for storing user data with encrypted password.
 
 ---
 
@@ -48,7 +48,7 @@ https://docs.google.com/document/d/1kKM8m7qLkr5Qdq7YP_EUZ8ehRRQx9t87wViwPuE8dRE/
 
 Before setting up the project, ensure that you have the following installed on your machine:
 
-#### 1. A Linux Machine
+#### 1. A Linux, Windows or Mac Machine
 
 #### 2. Containerization Application
 You need one of the following containerization applications installed:
@@ -74,7 +74,7 @@ If you're using Rancher, follow the official installation guide:
 
 ### Prerequisites
 Before running the project, ensure that the following prerequisites are fulfilled:
-1. A **Linux machine** with a containerization application like Docker, Podman, or Rancher.
+1. A **Linux, Windows or Mac machine** with a containerization application like Docker, Podman, or Rancher.
 2. Docker is recommended for this setup.
 
 If Docker is not installed, please follow the instructions in the **Prerequisites** section to install Docker or another containerization application.
@@ -86,7 +86,7 @@ If Docker is not installed, please follow the instructions in the **Prerequisite
 2. **Run the following Docker command** to start the container with the application:
 
     ```bash
-    docker run -d --network="bridge" -p 5000:5000 sanjaykshebbar/dashboard_v2:v1
+    docker run -d --network="bridge" -p 5000:5000 sanjaykshebbar/dashboard_v2:v2
     ```
 
     #### Explanation of the Docker command:
@@ -95,7 +95,7 @@ If Docker is not installed, please follow the instructions in the **Prerequisite
     - `-d`: This flag runs the container in the background (detached mode).
     - `--network="bridge"`: This specifies the network mode for the container. The `bridge` network is a default network in Docker, ensuring that the container can communicate with other containers on the same network.
     - `-p 5000:5000`: This flag maps the host machine's port 5000 to the container's port 5000, making the application accessible on port 5000 of your host machine.
-    - `sanjaykshebbar/dashboard_v2:v1`: This is the name of the Docker image being used. It's a versioned image (`v2`), and this image contains the application code.
+    - `sanjaykshebbar/dashboard_v2:v2`: This is the name of the Docker image being used. It's a versioned image (`v2`), and this image contains the application code.
 
 3. **Access the application**:
     - Once the container is running, you can access the application via a web browser.
@@ -118,6 +118,7 @@ If Docker is not installed, please follow the instructions in the **Prerequisite
       - **Username**: `Admin`
       - **Password**: `Password@123`
 
+**Note:** Here the user name is case sensitive too.
     After logging in, you will have access to the **media management dashboard**. Here, you can manage the media content, which includes adding or removing media files (MP4 videos and JPG images).
 
 ---
@@ -128,4 +129,7 @@ Once logged in, you can:
 - **Delete media**: Remove existing media files from the system.
 
 ### NOTE:
-This tool will automatically fetches the updated media content and get that displayed, where there is no manual intervention needed here.
+- This tool will automatically fetches the updated media content and get that displayed, where there is no manual intervention needed here.
+- This tool doesnot need internet if hosting in an Isolated environment.
+- In simple words this tool works as a wireless pendrive where the data (Images and Videos) will be shared over the local network to a remote display.
+- This tool will save the data inside that container itself under the path /media, and based on the media management the data can be manuplated. (Removal and Addition)
