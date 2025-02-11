@@ -25,8 +25,7 @@ Yet to Upload this
 
 ## Repos:
 1. Git Repo 1: https://github.com/DotDev-Sudo/dashboard_v2
-2. Git Repo 2: https://github.com/sanjaykshebbar/dashboard_v2
-3. Docker Image: https://hub.docker.com/r/sanjaykshebbar/dashboard_v2
+2. Docker Image: https://hub.docker.com/r/sanjaykshebbar/dashboard_v2
 
 ---
 ## More Information and comparison of this tool:
