@@ -42,8 +42,13 @@ https://docs.google.com/document/d/1llskI_pduFzKKmNElugKcvaIfTrzwn_D44rDwqAzC58/
 - **Socket.IO**: Real-time communication between the server and client for media upload and deletion events.
 - **HTML & CSS**: Frontend technologies used for creating the structure and styling the application.
 - **Material Design Lite (MDL)**: A CSS and JS library to style the app with Google's Material Design principles.
-- **SQLite **: A lightweight database for storing user data with encrypted password.
+- **SQLite**: A lightweight database for storing user data with encrypted password.
 
+
+*Note:* 
+* This tool is created by me as a base, and please consider all the neeed security fearures if you are planning to Implement in a production environment.
+* The Docker imge that is found below is completely built based on the current base and doesnt have the security feature that is mentioned in the documentation, so if you are planning to implement this directly I'm not responsible for any kind of data breach within.
+* *There is no telemetry in this code, Means I'm not collecting any type of data analytics form this project*
 ---
 
 ## Prerequisites
