@@ -32,6 +32,9 @@ Yet to Upload this
 
 https://docs.google.com/document/d/1kKM8m7qLkr5Qdq7YP_EUZ8ehRRQx9t87wViwPuE8dRE/edit?tab=t.0
 
+## Detailed Documentation can be found here!!
+https://docs.google.com/document/d/1llskI_pduFzKKmNElugKcvaIfTrzwn_D44rDwqAzC58/edit?tab=t.tti7clkfkvd4
+
 
 ## Technologies Used
 
